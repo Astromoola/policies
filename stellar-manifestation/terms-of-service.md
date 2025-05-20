@@ -42,4 +42,4 @@ These Terms are governed by and construed in accordance with the laws of your ju
 ## 10. Contact Us
 If you have questions or concerns about these Terms, please contact us at:
 
-**support@stellarManifestation.app**
+**theastromoola@gmail.com**
