@@ -72,6 +72,6 @@ We may update this Privacy Policy as our app evolves. The “_Last updated_” d
 ## 8. Contact Us
 
 If you have any questions, concerns, or requests regarding this Policy or your data, please email us at:  
-**privacy@stellarmanifestations.app**  
+**theastromoola@gmail.com** 
 
 Thank you for trusting Stellar Manifestations with your journey.  
