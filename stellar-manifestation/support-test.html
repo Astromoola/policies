@@ -16,17 +16,23 @@
     header {
       background-color: #735FD8;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 0 1rem 0.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 90px;
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 600;
+      text-align: center;
     }
     main {
-      max-width: 600px;
+      max-width: 700px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -50,29 +56,67 @@
     ul {
       padding-left: 1.2rem;
     }
-    /* Contact form styles */
-    form {
+    /* Search bar */
+    .search-box {
+      display: flex;
       margin-top: 1rem;
     }
-    form input,
-    form textarea {
-      width: 100%;
+    .search-box input {
+      flex: 1;
       padding: 0.5rem;
-      margin-bottom: 1rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 4px 0 0 4px;
     }
-    form button {
+    .search-box button {
       background-color: #735FD8;
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1rem;
       border: none;
-      border-radius: 4px;
+      border-radius: 0 4px 4px 0;
       cursor: pointer;
     }
-    form button:hover {
+    .search-box button:hover {
       background-color: #5a47b0;
     }
+    /* Resources */
+    .resources {
+      background: #FFF7E6;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 2rem;
+    }
+    .resources ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .resources li {
+      margin-bottom: 0.75rem;
+    }
+    /* Google Form embed */
+    .iframe-container {
+      position: relative;
+      padding-bottom: 75%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    .iframe-container object {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .iframe-fallback {
+      padding: 1rem;
+      background: #fff1f0;
+      color: #a00;
+      border: 1px solid #a00;
+      border-radius: 4px;
+      text-align: center;
+    }
+    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
@@ -81,40 +125,45 @@
       border-top: 1px solid #e0e0e0;
       margin-top: 2rem;
     }
+    /* Mobile adjustments */
+    @media (max-width: 400px) {
+      header img { height: 90px; }
+      header h1 { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo.svg" alt="Stellar Manifestation Logo">
     <h1>Stellar Manifestation Support</h1>
   </header>
   <main>
-    <p>Welcome to the Stellar Manifestation support page. Here you’ll find answers to common questions and ways to get in touch with our team.</p>
+    <p>Welcome to the Stellar Manifestation support center. Whether you need quick answers, detailed guides, or direct help, you’ll find everything here.</p>
 
     <h2>Frequently Asked Questions</h2>
     <ul>
       <li><strong>How do I reset my session?</strong><br />Go to the Sessions tab, select your active session, and tap "Reset".</li>
-      <li><strong>Why doesn't audio play in the background?</strong><br />Ensure you’ve granted background audio permissions in your device settings under <em>App Settings → Background App Refresh</em>.</li>
+      <li><strong>Why doesn't audio play in the background?</strong><br />Enable Background App Refresh under <em>Settings → Stellar Manifestation → Background App Refresh</em>.</li>
       <li><strong>How can I change my focus type?</strong><br />Navigate to Home &gt; Profiles, tap your profile, and select a new focus under "Manifestation Focus."</li>
       <li><strong>Where can I find my progress streak?</strong><br />Your day counter appears on the bottom of the Player screen—tap the loop icon to view session stats.</li>
+      <li><strong>Where is my data stored?</strong><br />All session and profile data is securely stored in your iCloud account or on-device if iCloud is disabled.</li>
     </ul>
 
     <h2>Contact Us</h2>
-    <p>If you need further assistance, please fill out the form below and we’ll get back to you within 24 hours.</p>
-    <form action="mailto:your-email@gmail.com" method="post" enctype="text/plain">
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="Name" required><br />
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="Email" required><br />
-      <label for="subject">Subject:</label><br />
-      <input type="text" id="subject" name="Subject"><br />
-      <label for="message">Message:</label><br />
-      <textarea id="message" name="Message" rows="5" required></textarea><br />
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Alternatively, you can email us directly at <a href="mailto:support@astromoola.com">support@astromoola.com</a>.</p>
+    <p>If you need further assistance, please fill out the form below:</p>
+    <div class="iframe-container">
+      <!-- Embed your Google Form: replace FORM_ID with your actual form ID -->
+      <object data="https://docs.google.com/forms/d/e/1FAIpQLScNSPmoyWymBtymnOSkOu7lm9VwJ04AKwazFcQox8JoyM7e2Q/viewform?embedded=true" type="text/html">
+        <div class="iframe-fallback">
+          Oops! The support form isn't available right now.<br />
+          Please <a href="mailto:support@astromoola.com">email us directly</a> for assistance.
+        </div>
+      </object>
+    </div>
+
   </main>
   <footer>
-    © 2025 Stellar Manifestation. All rights reserved.
+    © 2025 Stellar Manifestation | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
   </footer>
 </body>
 </html>
